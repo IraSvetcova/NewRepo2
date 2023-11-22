@@ -1,0 +1,70 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+{% if form != None %}
+<br>
+<h2>Ваш отзыв поможет нам улучшить сервис и сделать следующие поездки еще интереснее</h2>
+<br>
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <label for="{{form.name.id_for_label}}">{{form.name.label}}:</label>
+        {{form.name}}<br><br>
+        <label for="{{form.city.id_for_label}}">{{form.city.label}}:</label>
+        {{form.city}}<br>
+        <label for="{{form.gender.id_for_label}}">{{form.gender.label}}:</label>
+        {{form.gender}}
+        <label for="{{form.job.id_for_label}}">{{form.job.label}}:</label><br>
+        {{form.job}}<br><br>
+        <label for="{{form.quantity.id_for_label}}">{{form.quantity.label}}:</label><br>
+        {{form.quantity}}<br><br>
+        <label for="{{form.tours.id_for_label}}">{{form.tours.label}}:</label><br>
+        {{form.tours}}<br><br>
+        <label for="{{form.norm.id_for_label}}">{{form.norm.label}}:</label><br>
+        {{form.norm}}<br><br>
+        <label for="{{form.nenorm.id_for_label}}">{{form.nenorm.label}}:</label><br>
+        {{form.nenorm}}<br><br>
+        <label for="{{form.notice.id_for_label}}">{{form.notice.label}}:</label>
+        {{form.notice}}<br><br>
+        <label for="{{form.email.id_for_label}}">{{form.email.label}}:</label>
+        {{form.email}}<br><br>
+        <input id="example" type="submit" value="Отправить">
+    </form>
+</div>
+{% else %}
+<br>
+<h2>Благодарим за предоставленную информацию!</h2>
+<h3>Вы сообщили о себе следующее:</h3>
+<ul>
+    <li><span>Имя:</span>{{data.name}}</li>
+    <li><span>Город:</span>{{data.city}}</li>
+    <li><span>Пол:</span>{{data.gender}}</li>
+    <li><span>Работа:</span>{{data.job}}</li>
+    <li><span>Путешествуете:</span>{{data.quantity}}</li>
+    <li><span>Какие туры посетили:</span>{{data.tours}}</li>
+    <li><span>Достоинства:</span>{{data.norm}}</li>
+    <li><span>Недостатки:</span>{{data.nenorm}}</li>
+    <li><span>Получать новости о новых турах на e-mail:</span>{{data.notice}}</li>
+    <li><span>Ваш e-mail:</span>{{data.email}}</li>
+</ul>
+{% endif %}
+
+<script>
+    example.onmouseover = function () {
+        example.style.background = "#e69900";
+    };
+
+    example.onmouseleave = function () {
+        example.style.background = "white";
+    };
+
+    //{boba.focus(function () {
+    //    boba.style.background = "pink";
+    // });#
+
+    $("textarea, input[type=text]").focus(function () { $(this).css('background-color', '#ffd480') });
+    $("textarea, input[type=text]").blur(function () { $(this).css('background-color', 'white') });
+
+</script>
+
+
+{% endblock %}

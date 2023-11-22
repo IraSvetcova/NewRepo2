@@ -1,0 +1,25 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<h2>{{ title }}.</h2>
+    <p>
+    <strong>Доп.информация:</strong>
+    </p>
+    <p>
+       Больше узнать о Кольском полуострове и его истории:
+    </p>
+     <a href =https://ru.wikipedia.org/wiki/Кольский_полуостров target="_blank"> <img src="{% static 'app/content/Вики.jpg' %}" alt="Logo 1" align ="middle"/></a>
+    <p>
+       <br />
+       Путеводитель по Кольскому полуострову:
+    </p>
+     <a href =https://travel.yandex.ru/journal/kolskij-poluostrov/ target="_blank"> <img src="{% static 'app/content/Яндекс.jpg' %}" alt="Logo 2" align ="middle"/></a>
+    <p>
+        <br />
+      Кольский полуостров зимой и его достопримечательности:
+    </p>
+     <a href =https://youtravel.me/blog/russia-tours/kolskiy_poluostrov_zimoi target="_blank"> <img src="{% static 'app/content/тревел.jpg' %}" alt="Logo 3" align ="middle"/></a> 
+
+{% endblock %}

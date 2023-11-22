@@ -1,0 +1,55 @@
+﻿body
+{
+   background-color: papayawhip
+}
+
+h1, h2 {
+    color: maroon;
+    font-family: Arial;
+}
+
+#p1 {
+    font-weight:400;
+    color: black;
+}
+
+#im1 {float:left}
+
+.header {text-align:center}
+
+p b {color: saddlebrown}
+
+p {
+    font-size: 20px;
+    font-family: 'Times New Roman';
+    line-height: 130%;
+    text-indent: 30px;
+    text-align: justify;
+}
+
+img {
+    display:block;
+    margin:auto;
+}
+
+.block {
+    margin-left: 60px;
+}
+
+.services{
+    background-color: #F8E4AE;
+}
+
+ul li {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+ol {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.address {
+    text-align: center;
+}

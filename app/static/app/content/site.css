@@ -1,0 +1,106 @@
+body {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    background-color: papayawhip;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+h1, h2 {
+    color: maroon;
+    font-family: Arial;
+}
+
+#p1 {
+    font-weight: 400;
+    color: black;
+    text-align: justify;
+}
+
+#im1 {
+    float: left;
+    margin: 0px 15px 0px 0px;
+}
+
+.header {
+    text-align: center
+}
+
+b {
+    color: saddlebrown
+}
+
+p {
+    text-align: justify;
+}
+
+#im2 {
+    display: block;
+    margin: auto;
+}
+
+.jumbotron {
+    background-color: navajowhite;
+}
+
+.navbar {
+    background-color: saddlebrown;
+}
+
+h5 {
+    color: maroon;
+}
+
+#h_t {
+    font-family: Arial;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+#h_t2 {
+    font-family: Arial;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-align: center; 
+    font-size: 17px;
+}
+
+#divot{
+    margin: 0px 0px 10px 0px;
+}

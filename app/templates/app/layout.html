@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Туристическое агентство "ТурБарьер"</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{%  static 'app/content/значок.ico' %}">
+
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand"><img src="{% static 'app/content/Logotip 2.jpg' %}" alt="logo" width="56" height="54"/></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a style="color: bisque" href="{% url 'home' %}"> Главная</a></li>
+                    <li><a style="color: bisque" href="{% url 'about' %}">О нас</a></li>
+                    <li><a style="color: bisque" href="{% url 'contact' %}">Контакты</a></li>
+                    <li><a style="color: bisque" href="{% url 'links' %}">Полезные ресурсы</a></li>
+                    <li><a style="color: bisque" href="{% url 'anketa' %}">Отзыв</a></li>
+                    <li><a style="color: bisque" href="{% url 'blog' %}">Туры</a></li>
+                    {% if user.is_superuser %}
+                       <li><a style="color: bisque" href="{% url 'newpost' %}">Добавить статью</a></li>
+                    {% endif %}
+                    <li><a style="color: bisque" href="{% url 'videopost' %}">Видео</a></li>
+                    {% if not user.is_authenticated %}
+                       <li><a style="color: bisque" href="{% url 'registration' %}">Регистрация</a></li>
+                    {% endif %}
+                </ul>
+                {% include 'app/loginpartial.html' %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+{% block content %}{% endblock %}
+        <hr/>
+        <footer>
+            <p>&copy; {{ year }} - ТурБарьер</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>
+{% block scripts %}{% endblock %}
+
+</body>
+
+</html>
